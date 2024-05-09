@@ -1,22 +1,24 @@
+import React from "react";
+
 function App(props) {
-  const obj = {
-    age: 30,
-    name: "John Doe",
-    email: "johndoe@gmail.com",
-    password: "1234567890",
+  const son = {
+    firstName: "son",
+    lastName: "흥민",
+    address: "서울",
+    country: "한국",
+    married: true,
   };
   return (
     <div>
       <ul>
-        <li>{obj.name}</li>
-        <li>{obj.email}</li>
-        <li>{obj.age}</li>
-        <li>{obj.password}</li>
+        <li>성 : {son.firstName}</li>
+        <li>이름 : {son.lastName}</li>
+        <li>주소 : {son.address}</li>
+        <li>국가 : {son.country}</li>
+        <li>결혼 : {son.married ? "기혼" : "미혼"}</li>
       </ul>
     </div>
   );
 }
 
 export default App;
-
-import React from "react";
