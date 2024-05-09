@@ -1,27 +1,30 @@
 function App() {
-  // && , ||
+  // javascript review
 
-  // falsy(false 같은)
-  // : false, 0 , "", null, undefined
+  // javascript data type
+  let a; //  값을 할당하지 않으면 undefined
+  console.log("a", typeof a);
 
-  const a = undefined;
-  if (a) {
-    // 자바스크립트는 a에 boolean 이 아닌 것도 가능함 ( 0 = false)
-    console.log("a는 참이다");
-  } else {
-    console.log("a는 거짓이다");
-  }
+  let b = "문자열 타입"; // string
+  console.log("b", typeof b);
 
-  // truthy (true 같은) : falsy 가 아니면 truthy
+  let c = 3; // number
+  console.log("c", typeof c);
 
-  // &&, || 와 조합
+  let d = 3.14; // number
+  console.log("d", typeof d);
 
-  let b = 0;
-  let c = b && "값이 있음"; // c가 b 이면 -> "값이있음", 아니면 c는 b이다.
-  console.log(c);
+  let e = true; // boolean
+  console.log("e", typeof e);
 
-  let d = b || "값이 없음"; // d가 b가 아니면 -> " 값이없음 "
-  console.log(d);
+  let f = {}; // object;
+  console.log("f", typeof f);
+
+  let g = function () {}; // function
+  console.log("g", typeof g);
+
+  g = {}; // javascript 는 값이 들어갈때 타입이 정해짐 (function -> object 로 변경)
+  console.log("g", typeof g);
 
   return <div></div>;
 }
