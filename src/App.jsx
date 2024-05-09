@@ -14,6 +14,9 @@ function App() {
   // jsx 내에서 javascript 코드 사용
   return (
     <>
+      <p>
+        {var1} 선수는 연봉이 {var3} 억원 이다.
+      </p>
       <div>{var1}</div>
       <div>{var2}</div>
       <div>{var3}</div>
