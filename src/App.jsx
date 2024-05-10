@@ -29,6 +29,28 @@ function App(props) {
   console.log("a.address.city :", a.address.city);
   console.log("c.address.city :", c.address.city);
 
+  // 연습 : 깊은 복사
+  const d = {
+    company: {
+      name: "apple",
+      location: "US",
+    },
+    name: "iphone",
+    price: 300,
+  };
+
+  const { ...e } = d;
+  const { ...company1 } = d.company;
+  e.company = company1;
+
+  e.name = "galaxy";
+  e.company.name = "samsung";
+
+  console.log("d.name", d.name);
+  console.log("d.company.name:", d.company.name);
+  console.log("e.name", e.name);
+  console.log("e.company.name:", e.company.name);
+
   return <div></div>;
 }
 
