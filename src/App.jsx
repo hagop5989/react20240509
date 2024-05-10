@@ -1,31 +1,27 @@
 import React from "react";
+import { Button, ChakraProvider } from "@chakra-ui/react";
 
-function MyComp({ headStyle, bodyStyle }) {
-  return (
-    <div>
-      <h1 style={headStyle}>Lorem.</h1>
-      <p style={bodyStyle}>Lorem ipsum dolor.</p>
-    </div>
-  );
-}
 function App(props) {
   return (
-    <div>
-      <MyComp
-        headStyle={{
-          padding: "5px",
-          border: "1px solid lightgray",
-          color: "white",
-          backgroundColor: "#ccc",
-        }}
-        bodyStyle={{
-          margin: "5px",
-          border: "1px dotted lightgray",
-          color: "red",
-          textAlign: "center",
-        }}
-      />
-    </div>
+    <ChakraProvider>
+      <div>
+        <Button colorScheme={"blue"}> 클릭1 </Button>
+        <Button colorScheme={"orange"}> 클릭2 </Button>
+        <Button
+          sx={{
+            color: "skyblue",
+            backgroundColor: "black",
+            fontSize: "30px",
+            padding: "20px",
+            margin: "20px",
+          }}
+          colorScheme={"gray"}
+        >
+          {" "}
+          click3{" "}
+        </Button>
+      </div>
+    </ChakraProvider>
   );
 }
 
