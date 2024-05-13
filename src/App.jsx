@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 
-const foods = ["pizza", "ramen", "coffee", "latte", "burger"];
-
 function App(props) {
-  const [index, setIndex] = useState(0);
-  const food = foods[index];
+  const [text, setText] = useState("");
+
+  function handleUpdateText(e) {
+    console.log("변경됨");
+    console.log(e.target.value);
+    return setText(e.target.value);
+  }
 
   return (
     <div>
-      {index > 0 && <button onClick={() => setIndex(index - 1)}>이전</button>}
-      {index < food.length - 1 && (
-        <button onClick={() => setIndex(index + 1)}>다음</button>
-      )}
-      <div>{food}</div>
+      {/*이벤트 props 에 넣는 함수는 handle xxx 라고 정함*/}
+      <input type="text" onChange={handleUpdateText} />
+      <p>{text}</p>
     </div>
   );
 }
