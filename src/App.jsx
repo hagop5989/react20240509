@@ -2,18 +2,29 @@ import React, { useState } from "react";
 
 function App(props) {
   const [text, setText] = useState("");
+  const [list, setList] = useState([]);
 
-  function handleUpdateText(e) {
-    console.log("변경됨");
-    console.log(e.target.value);
-    return setText(e.target.value);
+  function handleClick() {
+    list.push(text);
+    const [...nextList] = list; // 얕은복사
+    nextList.push(text);
+    setList(nextList);
+    setText("");
   }
 
   return (
     <div>
-      {/*이벤트 props 에 넣는 함수는 handle xxx 라고 정함*/}
-      <input type="text" onChange={handleUpdateText} />
-      <p>{text}</p>
+      <input
+        value={text}
+        type="text"
+        onChange={(e) => setText(e.target.value)}
+      />
+      <button onClick={handleClick}>추가</button>
+      <ul>
+        {list.map((item) => {
+          <li>{item}</li>;
+        })}
+      </ul>
     </div>
   );
 }
