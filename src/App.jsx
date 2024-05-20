@@ -8,16 +8,17 @@ function App(props) {
       <Button
         onClick={() => {
           toast({
-            title: "토스트 제목",
-            description: "토스트 내용",
-            position: "top",
-            status: "info" /*정보 상태 */,
-            isClosable: true,
-            duration: 1000,
+            title: "경고 메세지",
+            description: " 경고 : XXX 문제가 발생하였습니다.",
+            position: "bottom-left",
+            status: "warning",
+            colorScheme: "red",
+            isClosable: false,
+            duration: 500,
           });
         }}
       >
-        toast
+        경고메세지
       </Button>
     </ChakraProvider>
   );
