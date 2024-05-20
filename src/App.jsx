@@ -1,8 +1,13 @@
 import React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Button, ChakraProvider } from "@chakra-ui/react";
+import { EmailIcon } from "@chakra-ui/icons";
 
 function App(props) {
-  return <ChakraProvider></ChakraProvider>;
+  return (
+    <ChakraProvider>
+      <Button leftIcon={<EmailIcon />}> Email</Button>
+    </ChakraProvider>
+  );
 }
 
 export default App;
